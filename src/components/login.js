@@ -162,6 +162,7 @@ class Login extends Component {
         <View
           style={{
             flex: 1,
+
             backgroundColor: COLOR.HEADER
           }}
         >
@@ -187,6 +188,7 @@ class Login extends Component {
       <View
         style={{
           flex: 1,
+          paddingTop: 16,
           backgroundColor: COLOR.HEADER
         }}
       >

@@ -35,7 +35,7 @@ class Home extends Component {
         style={{
           flex: 1,
           padding: 8,
-          marginTop: 16,
+          paddingTop: 16,
           backgroundColor: COLOR.BACKGROUND
         }}
       >

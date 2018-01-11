@@ -4,16 +4,32 @@
 
 ## Screenshots
 
+### Android
+
 <p float="left">
-<img src="./screenshots/01.png" width="250">
-<img src="./screenshots/02.png" width="250">
-<img src="./screenshots/03.png" width="250">
+<img src="./screenshots/android/01.png" width="250">
+<img src="./screenshots/android/02.png" width="250">
+<img src="./screenshots/android/03.png" width="250">
 </p>
 
 <p float="left">
-<img src="./screenshots/04.png" width="250">
-<img src="./screenshots/05.png" width="250">
-<img src="./screenshots/06.png" width="250">
+<img src="./screenshots/android/04.png" width="250">
+<img src="./screenshots/android/05.png" width="250">
+<img src="./screenshots/android/06.png" width="250">
+</p>
+
+### iOS
+
+<p float="left">
+<img src="./screenshots/ios/01.png" width="250">
+<img src="./screenshots/ios/02.png" width="250">
+<img src="./screenshots/ios/03.png" width="250">
+</p>
+
+<p float="left">
+<img src="./screenshots/ios/04.png" width="250">
+<img src="./screenshots/ios/05.png" width="250">
+<img src="./screenshots/ios/06.png" width="250">
 </p>
 
 ## Features
@@ -32,11 +48,9 @@
 2. Create an instance of react-native packager by **react-native start**.
 3. Make sure a device is connected.
    ### Android
-4. Execute **react-native run-android** for android
+4. Execute **react-native run-android** for android.
    ### iOS
 5. **react-native run-ios** for iOS.
-
-   NOTE: Needs additional testing
 
 ## Contribute
 
