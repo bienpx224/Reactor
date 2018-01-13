@@ -1,6 +1,6 @@
 # Reactor
 
-#### A powerful **react-native** template.
+#### A dynamic **react-native** template.
 
 ## Screenshots
 
