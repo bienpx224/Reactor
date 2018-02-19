@@ -8,7 +8,7 @@ import {
   RESTORE_SESSION
 } from "../config/redux-events";
 
-export function login(username, password) {
+export function login(username, password, callback) {
   console.log("authenticate:login", `${username}:${password}`);
   return dispatch => {
     dispatch(loginRequest());
@@ -40,6 +40,7 @@ export function login(username, password) {
         };
         dispatch(loginSuccess(session));
       } else {
+        callback();
         dispatch(loginFailed("Authentication Failed"));
       }
     }, 2000);

@@ -112,7 +112,7 @@ class Login extends Component {
         <View
           style={{
             marginTop: 16,
-            marginHorizontal: 16,
+            marginHorizontal: 32,
             flexDirection: "row",
             justifyContent: "space-between"
           }}
@@ -132,7 +132,7 @@ class Login extends Component {
           <View
             style={{
               marginTop: 16,
-              marginHorizontal: 16
+              marginHorizontal: 32
             }}
           >
             {this.renderViewSwitch()}
@@ -197,8 +197,8 @@ class Login extends Component {
         {this.state.showLogin ? (
           <LoginView
             setHideLogo={value => this._setHideLogo(value)}
-            login={(email, password) => {
-              this.props.actions.login(email, password);
+            login={(username, password, callback) => {
+              this.props.actions.login(username, password, callback);
             }}
             error={this.props.state.authError}
             navigate={route => this.props.navigation.navigate(route)}

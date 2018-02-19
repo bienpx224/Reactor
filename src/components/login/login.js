@@ -1,6 +1,6 @@
 /* @flow */
 import React, { Component } from "react";
-import { View, Text, TextInput, TouchableOpacity } from "react-native";
+import { View, Text, TextInput, TouchableOpacity, Alert } from "react-native";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 import * as COLOR from "../../config/colors";
 import PropTypes from "prop-types";
@@ -15,12 +15,26 @@ class LoginView extends Component {
     };
   } // constructor
 
+  login = (username, password, callback) => {
+    this.props.login(username, password, callback);
+  };
+
+  loginFailed = () => {
+    return Alert.alert(
+      "Authentication Failed",
+      "Incorrect username/password",
+      [{ text: "OK", onPress: () => null }],
+      { cancelable: true }
+    );
+  };
+
   render() {
     return (
       <View
         style={{
-          padding: 16,
-          margin: 16,
+          padding: 32,
+          margin: 32,
+          borderRadius: 4,
           backgroundColor: COLOR.CARD
         }}
       >
@@ -126,7 +140,11 @@ class LoginView extends Component {
         <TouchableOpacity
           activeOpacity={0.5}
           onPress={() =>
-            this.props.login(this.state.username, this.state.password)
+            this.login(
+              this.state.username,
+              this.state.password,
+              this.loginFailed
+            )
           }
         >
           <View
@@ -163,9 +181,9 @@ class LoginView extends Component {
           </Text>
         </TouchableOpacity>
 
-        <View style={{ alignItems: "center", height: 36 }}>
+        {/* <View style={{ alignItems: "center", height: 36 }}>
           <Text style={{ color: COLOR.ERROR_TEXT }}>{this.props.error}</Text>
-        </View>
+        </View> */}
       </View>
     );
   } // render
