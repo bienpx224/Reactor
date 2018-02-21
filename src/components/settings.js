@@ -4,10 +4,6 @@ import React, { Component } from "react";
 import { View, Text, TouchableOpacity } from "react-native";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 
-import { bindActionCreators } from "redux";
-import * as authActions from "../actions/authenticate";
-import { connect } from "react-redux";
-
 import * as COLOR from "../config/colors";
 
 class Settings extends Component {
@@ -34,52 +30,34 @@ class Settings extends Component {
       <View
         style={{
           flex: 1,
-          padding: 8,
-          paddingTop: 16,
           backgroundColor: COLOR.BACKGROUND
         }}
       >
-        <View
+        <TouchableOpacity
           style={{
-            paddingVertical: 16
+            borderBottomColor: COLOR.TINT_DARK,
+            borderBottomWidth: 1,
+            padding: 16,
+            paddingHorizontal: 16
           }}
         >
-          <Text style={{ textAlign: "center" }}>
-            This is the Settings component. Click the Logout button to return to
-            the Login screen.
-          </Text>
-        </View>
-
+          <Text style={{ color: COLOR.PRIMARY, fontSize: 18 }}>Settings1</Text>
+          <Text style={{ fontSize: 14 }}>Placeholder settings</Text>
+        </TouchableOpacity>
         <TouchableOpacity
-          activeOpacity={0.5}
-          onPress={() => this.props.actions.logout()}
+          style={{
+            borderBottomColor: COLOR.TINT_DARK,
+            borderBottomWidth: 1,
+            padding: 16,
+            paddingHorizontal: 16
+          }}
         >
-          <View
-            style={{
-              height: 48,
-              backgroundColor: COLOR.TINT,
-              justifyContent: "center",
-              alignItems: "center"
-            }}
-          >
-            <Text
-              style={{
-                color: COLOR.BUTTON_TEXT,
-                fontWeight: "bold"
-              }}
-            >
-              LOGOUT
-            </Text>
-          </View>
+          <Text style={{ color: COLOR.PRIMARY, fontSize: 18 }}>Settings2</Text>
+          <Text style={{ fontSize: 14 }}>Placeholder settings</Text>
         </TouchableOpacity>
       </View>
     );
   } // render
 } // Settings
 
-export default connect(
-  state => ({ state: state.authenticate }),
-  dispatch => ({
-    actions: bindActionCreators(authActions, dispatch)
-  })
-)(Settings);
+export default Settings;

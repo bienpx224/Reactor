@@ -42,27 +42,29 @@ class Profile extends Component {
         <View
           style={{
             padding: 16,
-            backgroundColor: COLOR.CARD,
             marginBottom: 8
           }}
         >
           <Text
-            style={{ color: COLOR.TINT, fontSize: 12, fontWeight: "bold" }}
-          >{`USERNAME`}</Text>
-          <Text style={{ fontSize: 14 }}>{`${authSession.username}`}</Text>
+            style={{ color: COLOR.PLACEHOLDER_TEXT_LIGHT, fontSize: 14 }}
+          >{`Username`}</Text>
+          <Text style={{ fontSize: 16, color: COLOR.PRIMARY_TEXT }}>{`${
+            authSession.username
+          }`}</Text>
         </View>
 
         <View
           style={{
             padding: 16,
-            backgroundColor: COLOR.CARD,
             marginBottom: 8
           }}
         >
           <Text
-            style={{ color: COLOR.TINT, fontSize: 12, fontWeight: "bold" }}
-          >{`EMAIL`}</Text>
-          <Text style={{ fontSize: 14 }}>{`${authSession.email}`}</Text>
+            style={{ color: COLOR.PLACEHOLDER_TEXT_LIGHT, fontSize: 14 }}
+          >{`Email`}</Text>
+          <Text style={{ fontSize: 16, color: COLOR.PRIMARY_TEXT }}>{`${
+            authSession.email
+          }`}</Text>
         </View>
       </View>
     );

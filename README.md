@@ -2,35 +2,7 @@
 
 #### A dynamic **react-native** template.
 
-## Screenshots
-
-### Android
-
-<p float="left">
-<img src="./screenshots/android/01.png" width="250">
-<img src="./screenshots/android/02.png" width="250">
-<img src="./screenshots/android/03.png" width="250">
-</p>
-
-<p float="left">
-<img src="./screenshots/android/04.png" width="250">
-<img src="./screenshots/android/05.png" width="250">
-<img src="./screenshots/android/06.png" width="250">
-</p>
-
-### iOS
-
-<p float="left">
-<img src="./screenshots/ios/01.png" width="250">
-<img src="./screenshots/ios/02.png" width="250">
-<img src="./screenshots/ios/03.png" width="250">
-</p>
-
-<p float="left">
-<img src="./screenshots/ios/04.png" width="250">
-<img src="./screenshots/ios/05.png" width="250">
-<img src="./screenshots/ios/06.png" width="250">
-</p>
+![Alt Text](./screenshots/android/animated.gif)
 
 ## Features
 

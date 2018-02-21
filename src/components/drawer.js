@@ -6,7 +6,13 @@ import { NavigationActions } from "react-navigation";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 import * as COLOR from "../config/colors";
 
-export default class DrawerContainer extends Component {
+import { bindActionCreators } from "redux";
+import * as authActions from "../actions/authenticate";
+import * as screenTrackActions from "../actions/screen-tracking";
+import { connect } from "react-redux";
+import getCurrentRouteName from "../utils/get-current-route";
+
+class DrawerContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -43,6 +49,7 @@ export default class DrawerContainer extends Component {
           <TouchableOpacity
             style={{ marginBottom: 24 }}
             onPress={() => {
+              this.props.actions.setScreen("Home");
               this.setState({
                 homeSelected: true,
                 profileSelected: false,
@@ -75,6 +82,7 @@ export default class DrawerContainer extends Component {
           <TouchableOpacity
             style={{ marginBottom: 24 }}
             onPress={() => {
+              this.props.actions.setScreen("Profile");
               this.setState({
                 homeSelected: false,
                 profileSelected: true,
@@ -106,8 +114,9 @@ export default class DrawerContainer extends Component {
           </TouchableOpacity>
 
           <TouchableOpacity
-            style={{ marginBottom: 24 }}
+            style={{ marginBottom: 18 }}
             onPress={() => {
+              this.props.actions.setScreen("Settings");
               this.setState({
                 homeSelected: false,
                 profileSelected: false,
@@ -137,8 +146,46 @@ export default class DrawerContainer extends Component {
               </Text>
             </View>
           </TouchableOpacity>
+
+          <View
+            style={{
+              backgroundColor: COLOR.BACKGROUND,
+              height: 2
+            }}
+          />
+          <TouchableOpacity
+            style={{ marginBottom: 24, marginTop: 16 }}
+            onPress={() => this.props.actions.logout()}
+          >
+            <View
+              style={{
+                padding: 16,
+                flexDirection: "row"
+              }}
+            >
+              <Icon
+                style={{ marginRight: 24 }}
+                name="logout"
+                size={21}
+                color={COLOR.PRIMARY_TEXT}
+              />
+              <Text style={{ fontSize: 14, color: COLOR.PRIMARY_TEXT }}>
+                Logout
+              </Text>
+            </View>
+          </TouchableOpacity>
         </View>
       </View>
     );
   } // render
 } // DrawerContainer
+
+export default connect(
+  state => ({}),
+  dispatch => ({
+    actions: bindActionCreators(
+      Object.assign({}, authActions, screenTrackActions),
+      dispatch
+    )
+  })
+)(DrawerContainer);

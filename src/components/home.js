@@ -2,11 +2,15 @@
 
 import React, { Component } from "react";
 import { View, Text, TouchableOpacity } from "react-native";
+
+import { Tabs } from "../config/router";
+
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 
 import { bindActionCreators } from "redux";
-import * as authActions from "../actions/authenticate";
+import * as screenTrackActions from "../actions/screen-tracking";
 import { connect } from "react-redux";
+import getCurrentRouteName from "../utils/get-current-route";
 
 import * as COLOR from "../config/colors";
 
@@ -34,17 +38,34 @@ class Home extends Component {
       <View
         style={{
           flex: 1,
-          padding: 8,
-          paddingTop: 16,
           backgroundColor: COLOR.BACKGROUND
         }}
       >
-        <Text style={{ textAlign: "center" }}>
-          This is the Home component. You can add your main functions here.
-        </Text>
+        <View
+          style={{
+            flex: 1
+          }}
+        >
+          <Tabs
+            screenProps={this.props.navigation}
+            onNavigationStateChange={(prevState, currentState) => {
+              const currentTab = getCurrentRouteName(currentState);
+              const prevScreen = getCurrentRouteName(prevState);
+
+              if (prevScreen !== currentTab) {
+                this.props.actions.setTab(currentTab);
+              }
+            }}
+          />
+        </View>
       </View>
     );
   } // render
 } // Home
 
-export default Home;
+export default connect(
+  state => ({}),
+  dispatch => ({
+    actions: bindActionCreators(Object.assign({}, screenTrackActions), dispatch)
+  })
+)(Home);
