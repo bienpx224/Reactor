@@ -1,6 +1,6 @@
 # Reactor
 
-#### A dynamic **react-native** template.
+#### A dynamic **react-native** template using redux and react-navigation.
 
 ![Alt Text](./screenshots/android/animated.gif)
 
