@@ -35,7 +35,7 @@ react-native init [project-name]
 2.  Add essential packages.
 
 ```
-yarn install react-navigation react-redux redux redux-thunk redux-logger react-native-vector-icons
+yarn add react-navigation react-redux redux redux-thunk redux-logger react-native-vector-icons
 ```
 
 3.  Link libraries to native code.
