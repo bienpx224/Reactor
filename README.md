@@ -14,15 +14,54 @@
 * Saving session state with AsyncStorage
 * Fully customizable components and styles
 
-## Installation
+## Building Demo
 
-1. Initialize node modules with **yarn install**.
-2. Create an instance of react-native packager by **react-native start**.
-3. Make sure a device is connected.
-   ### Android
-4. Execute **react-native run-android** for android.
-   ### iOS
-5. **react-native run-ios** for iOS.
+1.  Initialize node modules with **yarn install**.
+2.  Create an instance of react-native packager by **react-native start**.
+3.  Make sure a device is connected.
+    ### Android
+4.  Execute **react-native run-android** for android.
+    ### iOS
+5.  **react-native run-ios** for iOS.
+
+## Creating a New Project
+
+1.  Initialize a new project.
+
+```
+react-native init [project-name]
+```
+
+2.  Add essential packages.
+
+```
+yarn install react-navigation react-redux redux redux-thunk redux-logger react-native-vector-icons
+```
+
+3.  Link libraries to native code.
+
+```
+react-native link
+```
+
+4.  Copy the **src** folder inside the new project folder.
+5.  Register the component by modifying the **index.js** inside the new project folder and directly import App from **src/index.js** instead of **App.js**.
+6.  Delete the old **App.js** file.
+7.  Start the packager.
+
+```
+react-native start
+```
+
+8.  Build and run the application
+
+```
+#Android
+react-native run-android
+
+#iOS
+react-native run-ios
+```
 
 ## Contribute
 
