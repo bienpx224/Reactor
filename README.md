@@ -1,3 +1,7 @@
+### Deprecated
+This repository is no longer updated, please see https://github.com/Jerameel/Catalyst for an improved template using React's Context API.
+
+
 # Reactor
 
 #### A dynamic **react-native** template using redux and react-navigation.
